@@ -1,0 +1,6 @@
+reagent = input('Введите название реактива')
+reagent_amount = input('Введите количество реактива')
+print(f'Реактив {reagent} поступил на склад в количестве {reagent_amount} шт.')
+result_file = open("C:/Users/User/Documents/astafyev_ra/projects_2/task_2_2/inventory.txt", "a", encoding="utf-8")
+print(f'Реактив {reagent} поступил на склад в количестве {reagent_amount} шт.', file=result_file)
+result_file.close()
