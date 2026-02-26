@@ -3,10 +3,31 @@
 Были настроены такие приложения как **Visual studio code** и **Github** а также установлено расширение **python**
 Пример моего кода на **python**:
 ```python
-a = 10
-b = 5
-# Математическая операция
-result = a + b
-# Вывод результата на экран
-print(f"Результат сложения {a} + {b} равен {result}")
+import textwrap
+name = input('Введите ФИО:')
+date = input('Введите дату:')
+experiment = input('Введите название эксперимента:')
+result = input('Введите вывод:')
+word = len(name)
+space = ' '*(29 - word)
+word_date = len(date)
+space_date = ' '*(29 - word_date)
+word_experiment = len(experiment)
+space_experiment = ' '*(29 - word_experiment)
+wrapper = textwrap.TextWrapper(width=50)
+lines = wrapper.wrap(result)
+with open('C:/Users/User/Documents/astafyev_ra/projects_2/task_2_3/journal.txt', 'w', encoding='utf-8') as journal:
+    journal.write('+--------------------------------------------------+\n')
+    journal.write('| Электронный лабораторный журнал                  |\n')
+    journal.write('+--------------------------------------------------+\n')
+    journal.write(f'| ФИО исследователя : {name}{space}|\n')
+    journal.write(f'| Дата              : {date}{space_date}|\n')
+    journal.write(f'| Эксперимент       : {experiment}{space_experiment}|\n')
+    journal.write('+--------------------------------------------------+\n')
+    journal.write('| Вывод:                                           |\n')
+    for line in lines:
+        word_line = len(line)
+        space_line = ' '*(50 - word_line)
+        journal.write(f'|{line}{space_line}|\n')
+    journal.write('+--------------------------------------------------+')
 ```
